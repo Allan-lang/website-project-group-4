@@ -1,4 +1,29 @@
-<div>
-    <h1 class="text-blue-800">Header</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
+<div class="flex justify-between items-center md:p-10 p-4">
+    <h2 class="md:text-2xl text-xl md:flex-row flex flex-col items-start" > 
+        <span>DE</span>
+        <span>EN</span>
+    </h2>
+    <h1 class="text-4xl font-bold"> Baumeister </h1>
+    <div class="hidden md:flex md:flex-col">
+        <a href="">About</a>
+        <a href="">Services</a>
+        <a href="">References</a>
+        <a href="">contact</a>
+    </div>
+    <div class="md:hidden relative w-[39px] h-[23px]">
+        <button id="menu-toggle" class="relative w-full h-full">
+            <svg class="absolute top-0 right-0 bottom-0 left-0 w-full h-full" viewBox="0 0 39 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.10811 2.11842L0 12.1053L8.64865 21.3493L31.5135 23L39 12.0227L28 0L1.10811 2.11842Z" fill="black" />
+            </svg>
+            <span class="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center text-white" id="menu-icon">☰</span>
+            <span class="absolute top-0 right-0 bottom-0 left-0 flex items-center justify-center text-white hidden" id="close-icon">✕</span>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="absolute flex flex-col top-[150px] left-[100px] text-3xl text-green-700 font-bold p-4 gap-[50px] md:hidden hidden">
+        <a href="" class="py-2 ml-8">About</a>
+        <a href="" class="py-2 ml-4">Services</a>
+        <a href="" class="py-2 ml-0">References</a>
+        <a href="" class="py-2 ml-4">Contact</a>
+    </div>
 </div>
