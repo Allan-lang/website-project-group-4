@@ -1,4 +1,73 @@
-<div>
-    <h1>Footer</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-</div>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="flex flex-col min-h-screen bg-white">
+
+  <div class="flex justify-center pt-5 mb-8">
+    <img src="/website-project-template/src/red.png" alt="Red shape" class="w-[620.5px] lg:w-70" />
+  </div>
+
+<!-- Footer starts -->
+<footer class="bg-white pt-3 mt-6">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <!-- Desktop/Laptop view: Matching the exact layout from image 1 -->
+        <div class="hidden md:flex md:justify-between text-sm text-black">
+            
+            <!-- Column 1: Address -->
+            <div class="flex flex-col space-y-1 font-semibold">
+                <p>Agentur Baumeister</p>
+                <p>Böckhstraße 13</p>
+                <p>10967 Berlin</p>
+            </div>
+
+            <!-- Column 2: Contact Info -->
+            <div class="flex flex-col space-y-1">
+                <a href="mailto:hallo@agentur-baumeister.com" class="underline hover:text-blue-500 font-semibold">
+                    hallo@agentur-baumeister.com
+                </a>
+                <p class="font-semibold">+49 (0)30 - 490 827 87</p>
+            </div>
+
+            <!-- Column 3: Social Links -->
+            <div class="flex flex-col space-y-1 font-semibold">
+                <a href="#" class="hover:text-blue-500">Instagram</a>
+                
+            </div>
+            <a href="#" class="hover:text-blue-500 font-semibold">LinkedIn</a>
+
+            <!-- Column 4: Legal Links -->
+            <div class="flex flex-col space-y-1 font-semibold">
+                <a href="#" class="hover:text-blue-500">Impressum</a>
+                <a href="#" class="hover:text-blue-500">Datenschutz</a>
+            </div>
+        </div>
+
+        <!-- Mobile/Tablet view: Vertical stack -->
+        <div class="md:hidden text-sm text-black">
+            
+            <!-- Address Block -->
+            <div class="flex flex-col space-y-1 font-semibold mb-6">
+                <p>Agentur Baumeister</p>
+                <p>Böckhstraße 13</p>
+                <p>10967 Berlin</p>
+            </div>
+
+            <!-- Contact Block -->
+            <div class="flex flex-col space-y-1 mb-8">
+                <a href="mailto:hallo@agentur-baumeister.com" class="underline hover:text-blue-500 font-semibold">
+                    hallo@agentur-baumeister.com
+                </a>
+                <p class="font-semibold">+49 (0)30 - 490 827 87</p>
+            </div>
+
+            <!-- All Links in One Row -->
+            <div class="flex justify-between text-[13px] font-semibold">
+                <a href="#" class="hover:text-blue-500">Datenschutz</a>
+                <a href="#" class="hover:text-blue-500">Impressum</a>
+                <a href="#" class="hover:text-blue-500">LinkedIn</a>
+                <a href="#" class="hover:text-blue-500">Instagram</a>
+            </div>
+        </div>
+
+    </div>
+</footer>
