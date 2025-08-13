@@ -5,35 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website project template</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<script>
-        const loadComponents = (id, url) => {
-            fetch(url)
-                .then((response) => response.text())
-                .then((html) => {
-                    document.getElementById(id).innerHTML = html;
-                    if (id === "header") {
-                        let toggleBtn = document.getElementById("menu-toggle");
-                        toggleBtn.addEventListener("click", function () {
-                            document.getElementById("mobile-menu").classList.toggle("hidden");
-                            document.getElementById("menu-icon").classList.toggle("hidden");
-                            document.getElementById("close-icon").classList.toggle("hidden");
-                        })
-                    }
-                });
-        }
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+        });
+    };
 
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('contact', 'src/sections/contact.html');
-        loadComponents('footer', 'src/sections/footer.html');
-        loadComponents('legal-info', 'src/sections/legalInfo.html');
-        loadComponents('about', 'src/sections/about.html');
-        loadComponents('dataPrivacy', 'src/sections/dataPrivacy.html');
-    }
-</script>
-<body>
-    <div id="header"></div>
-</body>
+      loadComponents("header", "src/sections/header.html");
+      loadComponents("hero", "src/sections/hero.html");
+      loadComponents("contact", "src/sections/contact.html");
+      loadComponents("footer", "src/sections/footer.html");
+      loadComponents("info", "src/sections/Legal-information.html");
+    };
+  </script>
+  <body>
+    <!-- <div id="header"></div> -->
+    <!-- <div id="hero"></div> -->
+    <!-- <div id="contact"></div> -->
+    <div id="info"></div>
+    <div id="footer"></div>
+  </body>
 </html>
