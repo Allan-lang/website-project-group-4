@@ -7,11 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <script>
-    const loadComponents = (id, url) => {
+    const loadComponents = (id, url, callback) => {
       fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
+          if (callback) callback();
         });
     };
 
@@ -23,7 +24,205 @@
       loadComponents("legal-info", "src/sections/legal-info.html");
       loadComponents("about", "src/sections/about.html");
       loadComponents("brandStrategy", "src/sections/Brandstrategy.html");
-      loadComponents("yellowSection", "src/sections/yellowSection.html");
+      loadComponents("yellowSection", "src/sections/yellowSection.html", function () {
+        const links = [
+           {
+      name: "Ace Hotel",
+      url: "https://acehotel.com/",
+      mt: { lg: -1000, md: -1000, base: -1030 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "ARMEDANGELS",
+      url: "https://www.armedangels.com/de-de",
+      mt: { lg: -970, md: -970, base: -1000 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "BERLIN DESIGN WEEK",
+      url: "https://berlindesignweek.com/",
+      mt: { lg: -940, md: -940, base: -970 },
+      right: { lg: 0, md: 0, base: 50 },
+    },
+    {
+      name: "Berliner Berg",
+      url: "https://berlinerberg.com/",
+      mt: { lg: -910, md: -910, base: -940 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "BITE CLUB",
+      url: "https://www.instagram.com/biteclubberlin/?hl=de",
+      mt: { lg: -880, md: -880, base: -910 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Budweiser budvar",
+      url: "https://budweiserbudvar.com/?redirect_from=de&redirect_code=3",
+      mt: { lg: -850, md: -850, base: -880 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Chucking noodles",
+      url: "https://www.instagram.com/chungkingnoodles/?hl=de",
+      mt: { lg: -820, md: -820, base: -850 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Designpreis brandenburg",
+      url: "https://designpreis-brandenburg.de/",
+      mt: { lg: -790, md: -790, base: -820 },
+      right: { lg: 0, md: 0, base: 50 },
+    },
+    {
+      name: "Die teckniker",
+      url: "https://www.tk.de/techniker",
+      mt: { lg: -760, md: -760, base: -790 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "European street food awards",
+      url: "https://europeanstreetfood.com/",
+      mt: { lg: -730, md: -730, base: -760 },
+      right: { lg: -50, md: -50, base: 50 },
+    },
+    {
+      name: "Grundmann Dentistry",
+      url: "https://www.grundmann-dentistry.de/",
+      mt: { lg: -700, md: -700, base: -730 },
+      right: { lg: 0, md: 0, base: 50 },
+    },
+    {
+      name: "HORNBACK werkstueck",
+      url: "https://www.hornbach.de/aktuelles/werkstueck-edition/",
+      mt: { lg: -670, md: -670, base: -700 },
+      right: { lg: 0, md: 0, base: 50 },
+    },
+    {
+      name: "HORNBACK macht schule",
+      url: "https://www.hornbach.de/nachhaltigkeit/hornbach-macht-schule/",
+      mt: { lg: -640, md: -640, base: -670 },
+      right: { lg: 0, md: 0, base: 50 },
+    },
+    {
+      name: "If Designs",
+      url: "https://ifdesign.com/de/",
+      mt: { lg: -610, md: -610, base: -640 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Kopka",
+      url: "https://kopka.berlin/",
+      mt: { lg: -580, md: -580, base: -610 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "KLH Maßschuhe",
+      url: "https://klh-massschuhe.com/de",
+      mt: { lg: -550, md: -550, base: -580 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Lode & Stijn",
+      url: "https://www.lode-stijn.de/",
+      mt: { lg: -520, md: -520, base: -550 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Luya",
+      url: "https://luya.bio/",
+      mt: { lg: -490, md: -490, base: -520 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Meissen",
+      url: "https://www.meissen.com/net/",
+      mt: { lg: -460, md: -460, base: -490 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Motel Beer & coffee",
+      url: "https://www.motelminibar.com/",
+      mt: { lg: -430, md: -430, base: -460 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Paper & Tea",
+      url: "https://www.paperandtea.de/",
+      mt: { lg: -400, md: -400, base: -430 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Rocket & basil",
+      url: "https://www.rocketandbasil.com/",
+      mt: { lg: -370, md: -370, base: -400 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Seedberger Gruppe",
+      url: "https://gruppe.seeberger.de/de/",
+      mt: { lg: -340, md: -340, base: -370 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Shiori",
+      url: "https://shioriberlin.com/",
+      mt: { lg: -310, md: -310, base: -340 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "SPOC Magazin",
+      url: "https://www.verfassungsschutz.de/SharedDocs/publikationen/DE/wirtschafts-wissenschaftsschutz/2023-03-23-spoc-magazin.html",
+      mt: { lg: -280, md: -280, base: -310 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "Stocubo",
+      url: "https://www.stocubo.de/de/",
+      mt: { lg: -250, md: -250, base: -280 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "STUR",
+      url: "https://sturcookware.de/",
+      mt: { lg: -220, md: -220, base: -250 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+    {
+      name: "World of coffee",
+      url: "https://www.worldofcoffee.org/",
+      mt: { lg: -190, md: -190, base: -230 },
+      right: { lg: 0, md: 0, base: 50 },
+    },
+    {
+      name: "Yamo",
+      url: "https://yamo.bio/lander",
+      mt: { lg: -160, md: -160, base: -200 },
+      right: { lg: 50, md: 50, base: 50 },
+    },
+        ];
+
+        const container = document.getElementById("links-container");
+        links.forEach((link) => {
+          const p = document.createElement("p");
+          const a = document.createElement("a");
+          a.href = link.url;
+          a.textContent = link.name;
+          a.className = [
+            "z-20 absolute",
+            `lg:mt-[${link.mt.lg}px]`,
+            `md:mt-[${link.mt.md}px]`,
+            `mt-[${link.mt.base}px]`,
+            `right-[${link.right.base}px]`,
+            "lg:text-[20px]",
+            "md:text-[20px]",
+            "text-[25px]",
+            "text-right",
+          ].join(" ");
+          p.appendChild(a);
+          container.appendChild(p);
+        });
+      });
     };
   </script>
   <body>
