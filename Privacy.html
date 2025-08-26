@@ -1,4 +1,20 @@
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  const loadComponents = (id, url, callback) => {
+    fetch(url)
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById(id).innerHTML = html;
+        if (callback) callback();
+      });
+  };
+
+  window.onload = () => {
+    loadComponents("header", "src/sections/header.html");
+    loadComponents("footer", "src/sections/footer.html");
+  };
+</script>
+<div id="header"></div>
 
 <div class="max-w-4xl mx-auto p-8 md:p-12 text-[#00672E]">
   <h1 class="text-xl font-bold uppercase tracking-wide">Data Privacy</h1>
@@ -655,3 +671,5 @@
     </p>
   </div>
 </div>
+
+<div id="footer"></div>
