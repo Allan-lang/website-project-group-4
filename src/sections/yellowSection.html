@@ -1,44 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website project template</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <script>
-    const loadComponents = (id, url, callback) => {
-      fetch(url)
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById(id).innerHTML = html;
-          if (callback) callback();
-          if (id === "header") {
-            const toggleBtn = document.getElementById("menu-toggle");
-            const menu = document.getElementById("mobile-menu");
-            const menuIcon = document.getElementById("menu-icon");
-            const closeIcon = document.getElementById("close-icon");
-
-            toggleBtn.addEventListener("click", () => {
-              menu.classList.toggle("hidden");
-              menuIcon.classList.toggle("hidden");
-              closeIcon.classList.toggle("hidden");
-            });
-          }
-        });
-    };
-
-    window.onload = () => {
-      loadComponents("header", "src/sections/header.html");
-      loadComponents("hero", "src/sections/hero.html");
-      loadComponents("contact", "src/sections/contact.html");
-      loadComponents("footer", "src/sections/footer.html");
-      loadComponents("legal-information", "src/sections/legal-information.html");
-      loadComponents("about", "src/sections/about.html");
-      loadComponents("brandStrategy", "src/sections/Brandstrategy.html");
-      loadComponents("yellowSection", "src/sections/yellowSection.html", function () {
-        const links = [
-           {
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="mt-[0px] w-full h-[1500px] relative">
+  <img
+    src="/assets/Rectangle 3.png"
+    alt="Decorative yellow rectangle background"
+    class="z-10 md:h-[1100px] w-[1000px] md:w-screen lg:w-screen h-[1200px] relative"
+  />
+  <div id="links-container"></div>
+</div>
+<script>
+  const links = [
+    {
       name: "Ace Hotel",
       url: "https://acehotel.com/",
       mt: { lg: -1000, md: -1000, base: -1030 },
@@ -212,38 +183,27 @@
       mt: { lg: -160, md: -160, base: -200 },
       right: { lg: 50, md: 50, base: 50 },
     },
-        ];
+  ];
 
-        const container = document.getElementById("links-container");
-        links.forEach((link) => {
-          const p = document.createElement("p");
-          const a = document.createElement("a");
-          a.href = link.url;
-          a.textContent = link.name;
-          a.className = [
-            "z-20 absolute",
-            `lg:mt-[${link.mt.lg}px]`,
-            `md:mt-[${link.mt.md}px]`,
-            `mt-[${link.mt.base}px]`,
-            `right-[${link.right.base}px]`,
-            "lg:text-[20px]",
-            "md:text-[20px]",
-            "text-[25px]",
-            "text-right",
-          ].join(" ");
-          p.appendChild(a);
-          container.appendChild(p);
-        });
-      });
-      
-    };
-  </script>
-  <body class="overflow-x-hidden">
-    <div id="header"></div>
-    <div id="hero"></div>
-    <div id="about"></div>
-    <div id="brandStrategy"></div>
-    <div id="yellowSection"></div>
-    <div id="footer"></div>
-  </body>
-</html>
+  const container = document.getElementById("links-container");
+  links.forEach((link) => {
+    const p = document.createElement("p");
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.textContent = link.name;
+    a.className = [
+      "z-20 absolute",
+      `lg:mt-[${link.mt.lg}px]`,
+      `md:mt-[${link.mt.md}px]`,
+      `mt-[${link.mt.base}px]`,
+      `right-[${link.right.base}px]`,
+      "lg:text-[20px]",
+      "md:text-[20px]",
+      "text-[25px]",
+      "text-right",
+    ].join(" ");
+    p.appendChild(a);
+    container.appendChild(p);
+  });
+</script>
+
