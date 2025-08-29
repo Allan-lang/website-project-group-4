@@ -13,6 +13,18 @@
         .then((html) => {
           document.getElementById(id).innerHTML = html;
           if (callback) callback();
+          if (id === "header") {
+            const toggleBtn = document.getElementById("menu-toggle");
+            const menu = document.getElementById("mobile-menu");
+            const menuIcon = document.getElementById("menu-icon");
+            const closeIcon = document.getElementById("close-icon");
+
+            toggleBtn.addEventListener("click", () => {
+              menu.classList.toggle("hidden");
+              menuIcon.classList.toggle("hidden");
+              closeIcon.classList.toggle("hidden");
+            });
+          }
         });
     };
 
